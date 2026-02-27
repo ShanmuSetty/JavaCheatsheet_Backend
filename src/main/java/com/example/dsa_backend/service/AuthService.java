@@ -23,15 +23,18 @@ public class AuthService {
         this.jwtUtil = jwtUtil;
     }
 
-    public void register(AuthRequest request) {
-        // Check if email already taken
+    // Returns token + email so the frontend can log the user in immediately after registering
+    public AuthResponse register(AuthRequest request) {
         if (userRepository.findByEmail(request.getEmail()) != null) {
             throw new RuntimeException("Email already registered");
         }
 
         String hashed = passwordEncoder.encode(request.getPassword());
-        User user = new User(request.getEmail(), hashed);
-        userRepository.save(user);
+        userRepository.save(new User(request.getEmail(), hashed));
+
+        // Auto-login: generate token right away
+        String token = jwtUtil.generateToken(request.getEmail());
+        return new AuthResponse(token, request.getEmail());
     }
 
     public AuthResponse login(AuthRequest request) {

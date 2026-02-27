@@ -1,6 +1,7 @@
 package com.example.dsa_backend;
 
-import com.example.dsa_backend.dto.*;
+import com.example.dsa_backend.dto.AuthRequest;
+import com.example.dsa_backend.dto.AuthResponse;
 import com.example.dsa_backend.service.AuthService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +15,10 @@ public class AuthController {
         this.authService = authService;
     }
 
+    // Now returns AuthResponse instead of void
     @PostMapping("/register")
-    public void register(@RequestBody AuthRequest request) {
-        authService.register(request);
+    public AuthResponse register(@RequestBody AuthRequest request) {
+        return authService.register(request);
     }
 
     @PostMapping("/login")
