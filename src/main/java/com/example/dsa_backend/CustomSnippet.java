@@ -24,7 +24,7 @@ public class CustomSnippet {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String code;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String desc;
 
     public CustomSnippet() {}
