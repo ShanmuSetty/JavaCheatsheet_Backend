@@ -178,7 +178,7 @@ https://javacheatsheet-backend.onrender.com/api
 
 ## 🌐 Frontend
 
-See the [frontend repo](#) for the HTML/CSS/JS client that consumes this API.
+See the [frontend repo](https://github.com/ShanmuSetty/JavaCheatsheet_Frontend) for the HTML/CSS/JS client that consumes this API.
 
 ---
 
