@@ -1,4 +1,4 @@
-# ☕ Java DSA Cheatsheet – Backend
+# ☕ Java Cheatsheet – Backend
 
 Spring Boot backend powering the Java DSA Cheatsheet application.
 
